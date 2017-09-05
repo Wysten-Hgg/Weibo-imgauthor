@@ -2,7 +2,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.0, user-scalable=no">
-    <title>Chat Room</title>
+    <title>谁是Po主</title>
     <link href="css/mdui.min.css" rel="stylesheet" type="text/css">
 </head>
 <body class="mdui-theme-primary-pink mdui-theme-accent-pink">

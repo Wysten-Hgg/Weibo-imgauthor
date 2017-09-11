@@ -46,13 +46,17 @@
             mdui.alert('请输入图片地址!','错误');
             return false;
         }
+        if(checkURL(pic_path)==false){
+            mdui.alert("请输入正确的图片地址",'错误');
+            return false;
+        }
         $.ajax({
             type: "POST",
             url: "get.php",
             data: { pic_path:pic_path},
             dataType: "json",
             success: function(data){
-                    var html='<a href="'+data+'">'+data+'</a>';
+                    var html='<a href="'+data+'" target="_blank">'+data+'</a>';
                     $("#path").empty();
                     $("#path").append(html);
 
@@ -60,7 +64,13 @@
 
         });
     })
-
+    function checkURL(URL){
+        var strRegex ='(https?|http)://[-A-Za-z0-9+&@#/%?=~_|!:,.;]+[-A-Za-z0-9+&@#/%=~_|]';
+        var re=new RegExp(strRegex);
+            if (!re.test(URL)) {
+                return false;
+            }
+    }
 </script>
 </body>
 </html>
